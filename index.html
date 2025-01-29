@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Gestión de Clientes</h1>
+<form id="client-form">
+    <!-- Campo de entrada para el nombre del cliente -->
+    <input type="text" id="name" placeholder="Nombre" required>
+    <!-- Campo de entrada para el email del cliente -->
+    <input type="email" id="email" placeholder="Email" required>
+    <!-- Lista desplegable para seleccionar la extensión del teléfono -->
+    <select id="phone-extension" required>
+        <option value="+1">+1 (USA)</option>
+        <option value="+34">+34 (Spain)</option>
+        <option value="+52">+52 (Mexico)</option>
+        <option value="+44">+44 (UK)</option>
+        <option value="+91">+91 (India)</option>
+        <option value="+81">+81 (Japan)</option>
+        <option value="+49">+49 (Germany)</option>
+        <option value="+33">+33 (France)</option>
+        <option value="+61">+61 (Australia)</option>
+        <option value="+55">+55 (Brazil)</option>
+        <!-- Añadir más opciones según sea necesario -->
+    </select>
+    <!-- Campo de entrada para el número de teléfono del cliente -->
+    <input type="tel" id="phone" placeholder="Teléfono" required pattern="\d+">
+    <!-- Botón para enviar el formulario y añadir un cliente -->
+    <button type="submit">Añadir Cliente</button>
+</form>
+<table id="client-table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<div id="edit-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="edit-form">
+            <!-- Campos de entrada prellenados para editar los datos del cliente -->
+            <input type="text" id="edit-name" required>
+            <input type="email" id="edit-email" required>
+            <select id="edit-phone-extension" required>
+                <option value="+1">+1 (USA)</option>
+                <option value="+34">+34 (Spain)</option>
+                <option value="+52">+52 (Mexico)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+91">+91 (India)</option>
+                <option value="+81">+81 (Japan)</option>
+                <option value="+49">+49 (Germany)</option>
+                <option value="+33">+33 (France)</option>
+                <option value="+61">+61 (Australia)</option>
+                <option value="+55">+55 (Brazil)</option>
+                <!-- Añadir más opciones según sea necesario -->
+            </select>
+            <input type="tel" id="edit-phone" required pattern="\d+">
+            <!-- Botón para guardar los cambios del cliente editado -->
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
